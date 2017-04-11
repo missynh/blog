@@ -1,6 +1,6 @@
 ---
 title: linux生成SSH Keys  
-tags: linux, SSH Keys
+tags: linux,SSH Keys
 ---
 #### 何为SSH Key
 SSH key提供了一种与GitHub通信的方式，通过这种方式，能够在不输入密码的情况下，将GitHub作为自己的remote端服务器，进行版本控制
