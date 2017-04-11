@@ -1,5 +1,7 @@
 ---
-title: 连接VPS
+title: 连接VPS  
+date: 2017-04-10  
+tags: VPS
 ---
 ### 修改连接方式
 vps默认连接方式为密码连接，如果想通过公钥连接，需要修改服务器中的/etc/ssh/sshd_config配置

@@ -1,5 +1,7 @@
 ---
-title: VPS上安装nginx
+title: VPS上安装nginx  
+date: 2017-04-10  
+tags: nginx
 ---
 ### 安装编译环境gcc,gcc-c++
 

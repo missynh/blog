@@ -1,5 +1,6 @@
 ---
-title: 安装hexo
+title: 安装hexo  
+date: 2017-04-10  
 tags: hexo
 ---
 ### 一、VPS安装nodejs

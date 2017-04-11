@@ -1,5 +1,6 @@
 ---
-title: VPS上安装luajit
+title: VPS上安装luajit  
+date: 2017-04-11  
 tags: lua
 ---
 #### 安装luajit
