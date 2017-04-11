@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yangnenghui.cn">
-  <title>ynh blog</title>
+  <title>安装hexo | ynh blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="ynh blog">
-<meta property="og:url" content="http://yangnenghui.cn/index.html">
+  <meta name="description" content="一、VPS安装nodejs12345$ wget https://nodejs.org/dist/v6.10.2/node-v6.10.2-linux-x64.tar.xz$ tar -xf node-v6.10.2-linux-x64.tar.xz$ mv node-v6.10.2-linux-x64 nodejs$ vim /etc/profile&amp;gt; export PATH=$PATH:">
+<meta name="keywords" content="hexo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="安装hexo">
+<meta property="og:url" content="http://yangnenghui.cn/2017/04/10/install_hexo/index.html">
 <meta property="og:site_name" content="ynh blog">
+<meta property="og:description" content="一、VPS安装nodejs12345$ wget https://nodejs.org/dist/v6.10.2/node-v6.10.2-linux-x64.tar.xz$ tar -xf node-v6.10.2-linux-x64.tar.xz$ mv node-v6.10.2-linux-x64 nodejs$ vim /etc/profile&amp;gt; export PATH=$PATH:">
+<meta property="og:updated_time" content="2017-04-10T08:25:07.592Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ynh blog">
+<meta name="twitter:title" content="安装hexo">
+<meta name="twitter:description" content="一、VPS安装nodejs12345$ wget https://nodejs.org/dist/v6.10.2/node-v6.10.2-linux-x64.tar.xz$ tar -xf node-v6.10.2-linux-x64.tar.xz$ mv node-v6.10.2-linux-x64 nodejs$ vim /etc/profile&amp;gt; export PATH=$PATH:">
   
     <link rel="alternative" href="/atom.xml" title="ynh blog" type="application/atom+xml">
   
@@ -149,74 +154,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-install_nginx" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-install_hexo" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/10/install_nginx/">VPS上安装nginx</a>
-    </h1>
-  
-
-        
-        <a href="/2017/04/10/install_nginx/" class="archive-article-date">
-  	<time datetime="2017-04-10T09:24:11.579Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="安装编译环境gcc-gcc-c"><a href="#安装编译环境gcc-gcc-c" class="headerlink" title="安装编译环境gcc,gcc-c++"></a>安装编译环境gcc,gcc-c++</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ yum -y install gcc automake autoconf libtool make</div><div class="line">$ yum install gcc gcc-c++</div></pre></td></tr></table></figure>
-<h3 id="安装pcre"><a href="#安装pcre" class="headerlink" title="安装pcre"></a>安装pcre</h3><p>源码目录/usr/local/src</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">cd</span> /usr/<span class="built_in">local</span>/src</div><div class="line">$ mkdir obj</div><div class="line">$ <span class="built_in">cd</span> obj</div><div class="line">$ wget https://ftp.pcre.org/pub/pcre/pcre-8.40.tar.gz</div><div class="line">$ tar -zxvf pcre-8.40.tar.gz</div><div class="line">$ <span class="built_in">cd</span> pcre-8.40</div><div class="line">$ ./configure</div><div class="line">$ make &amp; make install</div></pre></td></tr></table></figure>
-<h3 id="安装zlib"><a href="#安装zlib" class="headerlink" title="安装zlib"></a>安装zlib</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">cd</span> /usr/<span class="built_in">local</span>/src/obj</div><div class="line">$ wget http://www.zlib.net/zlib-1.2.11.tar.gz</div><div class="line">$ tar -zxvf zlib-1.2.11.tar.gz</div><div class="line">$ <span class="built_in">cd</span>  zlib-1.2.11</div><div class="line">$ ./configure</div><div class="line">$ make &amp; make install</div></pre></td></tr></table></figure>
-<h3 id="安装openssl"><a href="#安装openssl" class="headerlink" title="安装openssl"></a>安装openssl</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">cd</span> /usr/<span class="built_in">local</span>/src/obj</div><div class="line">$ wget https://www.openssl.org/<span class="built_in">source</span>/openssl-1.1.0e.tar.gz</div><div class="line">$ tar -zxvf openssl-1.1.0e.tar.gz</div><div class="line">$ <span class="built_in">cd</span>  openssl-1.1.0e</div><div class="line">$ ./config</div><div class="line">$ make &amp; make install</div></pre></td></tr></table></figure>
-<h3 id="安装nginx"><a href="#安装nginx" class="headerlink" title="安装nginx"></a>安装nginx</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">cd</span> /usr/<span class="built_in">local</span>/src</div><div class="line">$ wget  http://nginx.org/download/nginx-1.11.10.tar.gz</div><div class="line">$ tar -zxvf nginx-1.11.10.tar.gz</div><div class="line">$ <span class="built_in">cd</span> nginx-1.11.10</div><div class="line">$ ./configure --prefix=/usr/<span class="built_in">local</span>/nginx --with-http_ssl_module --with-http_v2_module --with-pcre=../obj/pcre-8.40 --with-zlib=../obj/zlib-1.2.11 --with-openssl=../obj/openssl-1.1.0e</div><div class="line">$ make &amp; make install</div></pre></td></tr></table></figure>
-<h3 id="启动nginx"><a href="#启动nginx" class="headerlink" title="启动nginx"></a>启动nginx</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">cd</span> /usr/<span class="built_in">local</span>/nginx/sbin</div><div class="line">$ ./nginx</div></pre></td></tr></table></figure>
-<p>启动时可能会出现80端口占用错误，杀死占用端口进程，便能正常启动</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ lsof -i:80</div><div class="line">$ <span class="built_in">kill</span> -9 对应进程号</div><div class="line">$ ./nginx</div></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/04/10/install_nginx/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-install_hexo" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/10/install_hexo/">安装hexo</a>
+    <h1 class="article-title" itemprop="name">
+      安装hexo
     </h1>
   
 
@@ -262,71 +207,83 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/04/10/install_hexo/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yangnenghui.cn/2017/04/10/install_hexo/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
 
-
-
-
-
-
-
-
   
-    <article id="post-connect_VPS" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
+<nav id="article-nav">
+  
+    <a href="/2017/04/10/connect_VPS/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/10/connect_VPS/">连接VPS</a>
-    </h1>
-  
-
+          连接VPS
         
-        <a href="/2017/04/10/connect_VPS/" class="archive-article-date">
-  	<time datetime="2017-04-10T09:24:11.423Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="修改连接方式"><a href="#修改连接方式" class="headerlink" title="修改连接方式"></a>修改连接方式</h3><p>vps默认连接方式为密码连接，如果想通过公钥连接，需要修改服务器中的/etc/ssh/sshd_config配置</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ vim sshd_config</div><div class="line">&gt; PubkeyAuthentication yes                        <span class="comment">#是否允许公钥登录</span></div><div class="line">&gt; AuthorizedKeysFile   .ssh/authorized_keys       <span class="comment">#公钥文件目录</span></div></pre></td></tr></table></figure>
-<h3 id="添加公钥"><a href="#添加公钥" class="headerlink" title="添加公钥"></a>添加公钥</h3><p>在root下新建.ssh文件夹，将自己电脑的公钥复制进authorized_keys文件中</p>
-<h3 id="重启ssh服务"><a href="#重启ssh服务" class="headerlink" title="重启ssh服务"></a>重启ssh服务</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ systemctl reload sshd</div></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/04/10/connect_VPS/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
+      </div>
+    </a>
+  
+  
+    <a href="/2017/04/10/install_nginx/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">VPS上安装nginx</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
 
 
@@ -334,7 +291,28 @@
 
 
   
+  <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="install_hexo" data-title="安装hexo" data-url="http://yangnenghui.cn/2017/04/10/install_hexo/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
   
+
+
 
 
           </div>
@@ -356,8 +334,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

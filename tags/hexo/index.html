@@ -6,11 +6,11 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yangnenghui.cn">
-  <title>ynh blog</title>
+  <title>Tag: hexo | ynh blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="ynh blog">
-<meta property="og:url" content="http://yangnenghui.cn/index.html">
+<meta property="og:url" content="http://yangnenghui.cn/tags/hexo/index.html">
 <meta property="og:site_name" content="ynh blog">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ynh blog">
@@ -151,103 +151,34 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-install_nginx" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+  
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/10/install_nginx/">VPS上安装nginx</a>
-    </h1>
-  
-
-        
-        <a href="/2017/04/10/install_nginx/" class="archive-article-date">
-  	<time datetime="2017-04-10T09:24:11.579Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-10</time>
-</a>
-        
-      </header>
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="安装编译环境gcc-gcc-c"><a href="#安装编译环境gcc-gcc-c" class="headerlink" title="安装编译环境gcc,gcc-c++"></a>安装编译环境gcc,gcc-c++</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ yum -y install gcc automake autoconf libtool make</div><div class="line">$ yum install gcc gcc-c++</div></pre></td></tr></table></figure>
-<h3 id="安装pcre"><a href="#安装pcre" class="headerlink" title="安装pcre"></a>安装pcre</h3><p>源码目录/usr/local/src</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">cd</span> /usr/<span class="built_in">local</span>/src</div><div class="line">$ mkdir obj</div><div class="line">$ <span class="built_in">cd</span> obj</div><div class="line">$ wget https://ftp.pcre.org/pub/pcre/pcre-8.40.tar.gz</div><div class="line">$ tar -zxvf pcre-8.40.tar.gz</div><div class="line">$ <span class="built_in">cd</span> pcre-8.40</div><div class="line">$ ./configure</div><div class="line">$ make &amp; make install</div></pre></td></tr></table></figure>
-<h3 id="安装zlib"><a href="#安装zlib" class="headerlink" title="安装zlib"></a>安装zlib</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">cd</span> /usr/<span class="built_in">local</span>/src/obj</div><div class="line">$ wget http://www.zlib.net/zlib-1.2.11.tar.gz</div><div class="line">$ tar -zxvf zlib-1.2.11.tar.gz</div><div class="line">$ <span class="built_in">cd</span>  zlib-1.2.11</div><div class="line">$ ./configure</div><div class="line">$ make &amp; make install</div></pre></td></tr></table></figure>
-<h3 id="安装openssl"><a href="#安装openssl" class="headerlink" title="安装openssl"></a>安装openssl</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">cd</span> /usr/<span class="built_in">local</span>/src/obj</div><div class="line">$ wget https://www.openssl.org/<span class="built_in">source</span>/openssl-1.1.0e.tar.gz</div><div class="line">$ tar -zxvf openssl-1.1.0e.tar.gz</div><div class="line">$ <span class="built_in">cd</span>  openssl-1.1.0e</div><div class="line">$ ./config</div><div class="line">$ make &amp; make install</div></pre></td></tr></table></figure>
-<h3 id="安装nginx"><a href="#安装nginx" class="headerlink" title="安装nginx"></a>安装nginx</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">cd</span> /usr/<span class="built_in">local</span>/src</div><div class="line">$ wget  http://nginx.org/download/nginx-1.11.10.tar.gz</div><div class="line">$ tar -zxvf nginx-1.11.10.tar.gz</div><div class="line">$ <span class="built_in">cd</span> nginx-1.11.10</div><div class="line">$ ./configure --prefix=/usr/<span class="built_in">local</span>/nginx --with-http_ssl_module --with-http_v2_module --with-pcre=../obj/pcre-8.40 --with-zlib=../obj/zlib-1.2.11 --with-openssl=../obj/openssl-1.1.0e</div><div class="line">$ make &amp; make install</div></pre></td></tr></table></figure>
-<h3 id="启动nginx"><a href="#启动nginx" class="headerlink" title="启动nginx"></a>启动nginx</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">cd</span> /usr/<span class="built_in">local</span>/nginx/sbin</div><div class="line">$ ./nginx</div></pre></td></tr></table></figure>
-<p>启动时可能会出现80端口占用错误，杀死占用端口进程，便能正常启动</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ lsof -i:80</div><div class="line">$ <span class="built_in">kill</span> -9 对应进程号</div><div class="line">$ ./nginx</div></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
       
       
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/04/10/install_nginx/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-install_hexo" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2017" class="archive-year">2017</a>
+        </div>
+        <div class="archives">
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/10/install_hexo/">安装hexo</a>
-    </h1>
-  
-
-        
-        <a href="/2017/04/10/install_hexo/" class="archive-article-date">
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2017/04/10/install_hexo/" class="archive-article-date">
   	<time datetime="2017-04-10T09:24:11.548Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-10</time>
 </a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一、VPS安装nodejs"><a href="#一、VPS安装nodejs" class="headerlink" title="一、VPS安装nodejs"></a>一、VPS安装nodejs</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ wget https://nodejs.org/dist/v6.10.2/node-v6.10.2-linux-x64.tar.xz</div><div class="line">$ tar -xf node-v6.10.2-linux-x64.tar.xz</div><div class="line">$ mv node-v6.10.2-linux-x64 nodejs</div><div class="line">$ vim /etc/profile</div><div class="line">&gt; <span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:/usr/<span class="built_in">local</span>/nodejs/bin</div></pre></td></tr></table></figure>
-<p>注：配置nodejs环境变量，将当前配置生效，/etc/profile-配置全局系统变量，~/root/.bashrc-配置当前用户的环境变量，仅对当前用户生效</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">source</span> /etc/profile</div></pre></td></tr></table></figure>
-<h3 id="二、windows下配置hexo和nodejs，以便在windows上调试"><a href="#二、windows下配置hexo和nodejs，以便在windows上调试" class="headerlink" title="二、windows下配置hexo和nodejs，以便在windows上调试"></a>二、windows下配置hexo和nodejs，以便在windows上调试</h3><h4 id="1-下载nodejs安装包，一键安装"><a href="#1-下载nodejs安装包，一键安装" class="headerlink" title="1.下载nodejs安装包，一键安装"></a>1.下载nodejs安装包，一键安装</h4><p>附官方下载地址：<a href="https://nodejs.org/en/download" target="_blank" rel="external">https://nodejs.org/en/download</a></p>
-<h4 id="2-安装hexo"><a href="#2-安装hexo" class="headerlink" title="2.安装hexo"></a>2.安装hexo</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install -g hexo-cli</div></pre></td></tr></table></figure>
-<h4 id="3-初始化hexo"><a href="#3-初始化hexo" class="headerlink" title="3.初始化hexo"></a>3.初始化hexo</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo init</div></pre></td></tr></table></figure>
-<p>安装hexo过程中遇到”hexo不是内部或外部命令”错误，错误原因:环境变量没有配置，<br>解决办法：在环境变量中加上 C:\Program Files\nodejs\node_global\node_modules\hexo\node_modules.bin。<br><br><br>到此博客的基本框架就构建完成了，如果不想修改主题的话就可以用当前的默认主题。</p>
-<h4 id="4-将markdown文档生成-html静态文件"><a href="#4-将markdown文档生成-html静态文件" class="headerlink" title="4.将markdown文档生成.html静态文件"></a>4.将markdown文档生成.html静态文件</h4><p>注：生成的站点文件默认放在public文件夹中<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo g</div></pre></td></tr></table></figure></p>
-<h4 id="5-启动hexo服务"><a href="#5-启动hexo服务" class="headerlink" title="5.启动hexo服务"></a>5.启动hexo服务</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<h4 id="6-修改默认主题"><a href="#6-修改默认主题" class="headerlink" title="6.修改默认主题"></a>6.修改默认主题</h4><p>你可以在gitlab上下载你想要的主题。将下载好的主题放在themes文件夹下，修改_config.yml中的theme参数就完成了。</p>
-<h3 id="三、VPS上部署"><a href="#三、VPS上部署" class="headerlink" title="三、VPS上部署"></a>三、VPS上部署</h3><p>首先你的vps上需要安装好nginx，如果没安装的可以参考上一篇<a href="http://yangnenghui.cn/2017/04/10/install_nginx/">VPS上安装nginx</a><br>修改nginx配置root指向hexo生成的静态文件目录<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">$ vim /usr/<span class="built_in">local</span>/nginx/conf/nginx.conf</div><div class="line">&gt; server &#123;</div><div class="line">&gt;  listen 80;                                       <span class="comment">#监听80端口</span></div><div class="line">&gt;  server_name yangnenghui.cn www.yangnenghui.cn;   <span class="comment">#域名</span></div><div class="line"> </div><div class="line">&gt; location / &#123;</div><div class="line">&gt;   root /www/blog/public;                          <span class="comment">#博客目录下的public目录（静态文件）</span></div><div class="line">&gt;   index index.html index.htm;                     <span class="comment">#首页</span></div><div class="line">&gt;   &#125;</div><div class="line"> </div><div class="line">&gt; error_page 500 502 503 504 /50x.html;             <span class="comment">#出现500 502 503 504错误，跳转到对应的错误页面</span></div><div class="line">&gt;   location = /50x.html &#123;</div><div class="line">&gt;   root html;</div><div class="line">&gt;   &#125;</div><div class="line">&gt; &#125;</div></pre></td></tr></table></figure></p>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/04/10/install_hexo/">安装hexo</a>
+    </h1>
+  
 
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -259,82 +190,19 @@
 		</ul>
 	</div>
 
-      
+          
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/04/10/install_hexo/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-
-
-
-
-
-
-
   
-    <article id="post-connect_VPS" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+  
+    </div></section>
+  
+
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/10/connect_VPS/">连接VPS</a>
-    </h1>
-  
-
-        
-        <a href="/2017/04/10/connect_VPS/" class="archive-article-date">
-  	<time datetime="2017-04-10T09:24:11.423Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="修改连接方式"><a href="#修改连接方式" class="headerlink" title="修改连接方式"></a>修改连接方式</h3><p>vps默认连接方式为密码连接，如果想通过公钥连接，需要修改服务器中的/etc/ssh/sshd_config配置</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ vim sshd_config</div><div class="line">&gt; PubkeyAuthentication yes                        <span class="comment">#是否允许公钥登录</span></div><div class="line">&gt; AuthorizedKeysFile   .ssh/authorized_keys       <span class="comment">#公钥文件目录</span></div></pre></td></tr></table></figure>
-<h3 id="添加公钥"><a href="#添加公钥" class="headerlink" title="添加公钥"></a>添加公钥</h3><p>在root下新建.ssh文件夹，将自己电脑的公钥复制进authorized_keys文件中</p>
-<h3 id="重启ssh服务"><a href="#重启ssh服务" class="headerlink" title="重启ssh服务"></a>重启ssh服务</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ systemctl reload sshd</div></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/04/10/connect_VPS/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-  
 
 
           </div>
@@ -356,10 +224,10 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
+		isHome: false,
 		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		root: "/",
