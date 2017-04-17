@@ -4,15 +4,34 @@ date: 2017-04-17
 tags: zookeeper
 ---
 
-Zookeeper作为Dubbo服务的注册中心，Dubbo原先基于数据库的注册中心，没采用Zookeeper，Zookeeper一个分布式的服务框架，是树型的目录服务的数据存储，能做到集群管理数据 ，这里能很好的作为Dubbo服务的注册中心，Dubbo能与Zookeeper做到集群部署，当提供者出现断电等异常停机时，Zookeeper注册中心能自动删除提供者信息，当提供者重启时，能自动恢复注册数据，以及订阅请求。我们先在linux上安装Zookeeper，我们安装最简单的单点，集群比较麻烦。
+&nbsp;&nbsp;&nbsp; Zookeeper作为Dubbo服务的注册中心，Dubbo原先基于数据库的注册中心，没采用Zookeeper，Zookeeper一个分布式的服务框架，是树型的目录服务的数据存储，能做到集群管理数据 ，这里能很好的作为Dubbo服务的注册中心，Dubbo能与Zookeeper做到集群部署，当提供者出现断电等异常停机时，Zookeeper注册中心能自动删除提供者信息，当提供者重启时，能自动恢复注册数据，以及订阅请求。我们先在linux上安装Zookeeper，我们安装最简单的单点，集群比较麻烦。  
+&nbsp;&nbsp;&nbsp; ZooKeeper的安装模式分为三种，分别为：单机模式（stand-alone）、集群模式和集群伪分布模式。ZooKeeper 单机模式的安装相对比较简单，此篇就以单机模式为示例
+#### 准备工作
+Zookeeper要求JAVA的环境才能运行，并且需要jdk1.6以上。  
+下载地址: http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+
+``` bash
+$ mkdir usr/java
+$ wget jdk下载链接
+$ tar -zxvf jdk-8u121-linux-x64.tar.gz\?AuthParam\=1492407600_1f244cbec307bf99f60713c6680fbe04
+$ mv jdk-8u121-linux-x64.tar.gz\?AuthParam\=1492407600_1f244cbec307bf99f60713c6680fbe04 jdk1.8
+$ vim /etc/profile
+> JAVA_HOME=/usr/java/jdk1.8
+> JRE_HOME=$JAVA_HOME/jre
+> PATH=$PATH:$JAVA_HOME/bin:$JRE_HOME/bin
+> CLASSPATH=CLASSPATH=:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar:$JRE_HOME/lib/dt.jar
+> export JAVA_HOME JRE_HOME PATH CLASSPATH
+$ source /etc/profile
+$ java -version
+```
+显示jdk版本，说明安装成功
+
 #### 下载zookeeper源码
 地址：http://www.apache.org/dist/zookeeper/
 ``` bash
 $ wget http://www.apache.org/dist/zookeeper/zookeeper-3.4.10/zookeeper-3.4.10.tar.gz
 $ tar -zxvf zookeeper-3.4.10.tar.gz
 ```
-
-这里要注意的是Zookeeper要求JAVA的环境才能运行，并且需要jdk1.6以上
 
 <!--more-->
 在对应的zookeeper-3.4.6/conf 下有一个文件zoo_sample.cfg的这个文件里面配置了监听客户端连接的端口等一些信息，Zookeeper 在启动时会找zoo.cfg这个文件作为默认配置文件,所以我们复制一个名称为zoo.cfg的文件
