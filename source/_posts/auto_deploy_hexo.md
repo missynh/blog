@@ -9,6 +9,8 @@ tags: [hexo,lua,nginx,webhooks,github]
 <img src="http://oo8ieb5e5.bkt.clouddn.com/image/vps/github_webhooks.png" />   <br><br>
 这样当你向这个项目push时，就会发送一个post请求，你的nginx这时便可收到这个请求，那么你就可以为所欲为了，嘿嘿.....
 
+<!--more-->
+
 #### nginx配置
 在这之前你需要装好lua或者Luajit以及nginx编译了lua-nginx-module模块  
 <img src="http://oo8ieb5e5.bkt.clouddn.com/image/vps/nginx_webhooks_conf.png" />

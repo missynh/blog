@@ -13,6 +13,8 @@ $ vim /etc/profile
 ```
 注：配置nodejs环境变量，将当前配置生效，/etc/profile-配置全局系统变量，~/root/.bashrc-配置当前用户的环境变量，仅对当前用户生效
 
+<!--more-->
+
 ``` bash
 $ source /etc/profile
 ```
