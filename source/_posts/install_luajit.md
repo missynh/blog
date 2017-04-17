@@ -16,6 +16,8 @@ echo "/usr/local/lib" >> /etc/ld.so.conf
 ldconfig
 ```
 
+<!--more-->
+
 #### 添加lua-nginx-module
 
 ``` bash

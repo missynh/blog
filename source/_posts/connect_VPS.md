@@ -12,6 +12,8 @@ $ vim sshd_config
 > AuthorizedKeysFile   .ssh/authorized_keys       #公钥文件目录
 ```
 
+<!--more-->
+
 ### 添加公钥  
 在root下新建.ssh文件夹，将自己电脑的公钥复制进authorized_keys文件中
 
