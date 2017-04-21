@@ -1,5 +1,5 @@
 ---
-title: [转]Maven与nexus的关系  
+title: Maven与nexus的关系  
 date: 2017-04-21  
 tags: [maven, nexus]
 ---
