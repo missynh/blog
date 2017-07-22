@@ -42,4 +42,3 @@ tags: [maven, nexus]
   
   Nexus仅仅是私服的一种。
   
-  原文地址：http://blog.csdn.net/liusong0605/article/details/25654811
