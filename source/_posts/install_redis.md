@@ -14,6 +14,8 @@ $ cd redis-4.0.1
 $ make
 ```
 
+<!--more-->
+
 #### 复制可执行文件至/usr/redis
 
 编译完成后，再redis-4.0.1/src下有四个可执行文件：redis-server，redis-benchmark，redis-cli，redis.conf.将其复制进/usr/redis下
