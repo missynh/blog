@@ -120,7 +120,7 @@ public class Result<T extends Serializable> implements Serializable{
     }
 ```
 
-####邮箱中的配置
+### 邮箱中的配置
 由于主机不支持mail函数，网站要使用邮件发送功能就需要调用外部的smtp，同时邮箱自身也要开启smtp/pop功能才可以正常调用。
 以网易的126邮箱为例：
 <img src="http://oo8ieb5e5.bkt.clouddn.com/image/vps/stmp.png" />
