@@ -52,3 +52,11 @@ $ ./redis-cli
 $ set test "成功啦"
 $ get test
 ```
+
+#### 限制redis连接
+方案1：配置文件中设置允许登录的客户端IP地址：
+   如：bind 127.0.0.1;
+方案2：redis客户端设置密码
+    如：config set requirepass "password"
+
+友情提示：基于我的VPS通过redis被入侵作为别人的挖矿工具的惨痛教训，提示您千万不要将redis的端口号暴露在公网中。
