@@ -1,10 +1,21 @@
 ---
-title: 实现邮件发送
+title: 基于springboot实现邮件发送
 date: 2017-07-28  
-tags: lts
+tags: [mail, springboot]
 ---
 
-我相信大家项目中难免会遇到发送邮件的业务。下面我就以重置密码，并将随机生成的新密码发送至邮箱中做一个简要代码小记，以便今后的学习参考。
+我相信大家项目中难免会遇到发送邮件的业务。下面我就以重置密码，并将随机生成的新密码发送至邮箱的功能为例做一个简要代码小记，以便今后的学习参考。
+
+#### 代码实现
+application.properties
+```bash
+# mail
+spring.mail.host=smtp.126.com
+spring.mail.username=XXX@126.com
+spring.mail.password=XXX
+spring.mail.properties.mail.smtp.auth=true
+```
+<!--more-->
 
 ForgetPwdDTO.java
 ```bash
@@ -22,7 +33,6 @@ public class ForgetPwdDTO {
 	private String email;
 }
 ```
-<!--more-->
 
 Result.java
 
@@ -109,4 +119,10 @@ public class Result<T extends Serializable> implements Serializable{
         return assembleSuccessResult(null);
     }
 ```
+
+####邮箱中的配置
+由于主机不支持mail函数，网站要使用邮件发送功能就需要调用外部的smtp，同时邮箱自身也要开启smtp/pop功能才可以正常调用。
+以网易的126邮箱为例：
+<img src="http://oo8ieb5e5.bkt.clouddn.com/image/vps/stmp.png" />
+将图中的POP3/SMTP服务开启即可
 
