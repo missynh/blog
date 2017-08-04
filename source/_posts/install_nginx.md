@@ -72,3 +72,10 @@ $ lsof -i:80
 $ kill -9 对应进程号
 $ ./nginx
 ```
+
+####开机自启动
+
+```bash
+$ vim /etc/rc.local
+> /usr/local/nginx/sbin/nginx
+```
