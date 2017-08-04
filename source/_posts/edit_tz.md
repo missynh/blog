@@ -19,11 +19,11 @@ can use the /usr/bin/tzselect command in shell scripts:
 Asia/Shanghai
 ```
 
-然后根据提示将TZ='Asia/Shanghai'; export到你的profile配置文件中。并关机重启使之生效
+然后根据提示将TZ='Asia/Shanghai'; export到你的profile配置文件中。并关机重启使之生效 
 
 ```bash
 $ vim /etc/profile
-> export TZ='Asia/Shanghai';
+> export TZ='Asia/Shanghai'
 $ shutdown -r now
 $ date
 ```
