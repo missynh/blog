@@ -11,6 +11,8 @@ tags: [sublime，PackageResourceViewer]
 ### 使用
 ctrl+shift+p-->输入open Resource-->即可看到所有的sublime插件列表-->继续打开可以看到所有文件内容
 
+<!-- more -->
+
 ### 实例
 sublime功能十分完善，但是我使用此软件学习python时，接触到他的控制台不能接受键盘输入，这点还是比较难受的。下面贴出解决办法
 
