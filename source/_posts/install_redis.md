@@ -33,7 +33,7 @@ $ ./redis-server
 
 #### 将其设置为后台运行
 
-用vim打开配置文件redis.conf，找到daemonize=no，将no修改为yes，保存并退出。
+用vim打开配置文件redis.conf，找到daemonize=no，将no修改为yes，保存并退出。redis就会以守护进程运行，不会独占终端。
 
 ```bash
 $ vim redis.conf
@@ -58,5 +58,9 @@ $ get test
    如：bind 127.0.0.1;
 方案2：redis客户端设置密码
     如：config set requirepass "password"
+设置密码后使用redis-cli需要带密码登录
+```bash
+$ redis-cli -a youPassword
+```
 
 友情提示：基于我的VPS通过redis被入侵作为别人的挖矿工具的惨痛教训，提示您千万不要将redis的端口号暴露在公网中。
