@@ -54,9 +54,9 @@ $ get test
 ```
 
 #### 限制redis连接
-方案1：配置文件中设置允许登录的客户端IP地址：
+1. 配置文件中设置允许登录的客户端IP地址：
    如：bind 127.0.0.1;
-方案2：redis客户端设置密码
+2. redis客户端设置密码
     如：config set requirepass "password"
 设置密码后使用redis-cli需要带密码登录
 ```bash
