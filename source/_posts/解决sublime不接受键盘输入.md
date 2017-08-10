@@ -14,7 +14,7 @@ ctrl+shift+p-->输入open Resource-->即可看到所有的sublime插件列表-->
 <!-- more -->
 
 ### 实例
-sublime功能十分完善，但是我使用此软件学习python时，接触到他的控制台不能接受键盘输入，这点还是比较难受的。下面贴出解决办法
+sublime功能十分完善，但是我使用此软件学习python时，发现sublime的控制台不能接受键盘输入，这点还是比较难受的。下面贴出解决办法
 
 使用PackageResourceViewer插件打开sublime内置python下的Python.sublime-build文件
 ```bash
