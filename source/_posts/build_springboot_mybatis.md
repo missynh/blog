@@ -20,6 +20,7 @@ spring.datasource.name=evaluation
 spring.datasource.url=jdbc:mysql://172.0.0.1/test
 spring.datasource.username=test
 spring.datasource.password=test
+# 使用druid数据源
 spring.datasource.type=com.alibaba.druid.pool.DruidDataSource
 spring.datasource.driver-class-name=com.mysql.jdbc.Driver
 spring.datasource.filters=stat
