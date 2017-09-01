@@ -3,8 +3,8 @@ title: 搭建springboot+mybatis轻量级框架
 date: 2017-07-28  
 tags: [springboot, mybatis]
 ---
-年初的时候使用springboot+mybatis搭建过一个小框架，一直没有时间整理总结，好在近期公司项目已到尾声，可以抽出点时间整理这段时间所学的知识，此篇文章想要记录一下我在四院这个项目中框架的构建。
-先附上参考的git项目地址：https://github.com/abel533/MyBatis-Spring-Boot
+年初的时候使用springboot+mybatis搭建过一个小框架，一直没有时间整理总结，好在手上项目已到尾声，可以抽出点时间整理这段时间所学的知识，此篇文章想要记录一下我在四院这个项目中框架的构建。
+先附上demo项目地址：https://github.com/missynh/springboot-demo.git
 
 <!--more-->
 
