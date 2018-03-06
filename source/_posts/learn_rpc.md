@@ -12,6 +12,8 @@ RPC（Remote Procedure Call）指远程过程调用，也就是说，两台服�
 
 如果说我们需要使用REST接口的方式调用另外一台服务器上的接口，你将需要写下面这一坨代码。
 
+<!-- more -->
+
 ```bash
 public String load(String url, String query) {
 
