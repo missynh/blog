@@ -10,7 +10,6 @@ tags: springmvc
 4.DispatcherServlet调用HandlerAdapter
 5.HandlerAdapter经过适配调用具体的处理器(Controller，也叫后端控制器)
 6.Controller执行完成返回ModelAndView
-
 <!-- more -->
 7.HandlerAdapter将controller执行结果ModelAndView返回给DispatcherServlet
 8.DispatcherServlet将ModelAndView传给ViewReslover视图解析器
