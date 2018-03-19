@@ -80,6 +80,11 @@ server 用于服务器访问信息的配置
 
 9.springMVC中DispatcherServlet是配置在哪个文件中的？HandlerMapper是用来干什么的？filter，listener，servlet三个的加载顺序是什么？
 
+listener-->Filter-->servlet(理发师)
+listener生命周期：一直从程序启动到程序停止运行
+filter生命周期：程序启动调用filter的init()方法，程序停止调用filter的destory()方法
+servlet生命周期：第一次请求调用init()方法初始化，每次程序执行都会根据请求调用dotGet()或者doPost()方法，程序停止运行，调用destory()方法销毁
+
 前面花了很长时间聊了两个项目的业务，穿插的问题有点记不清了，记住的问题就这么多....
 
 笔记：
